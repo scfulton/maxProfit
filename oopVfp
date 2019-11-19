@@ -1,0 +1,27 @@
+Concepts and Paradigms of Object.Oriented Programming
+Peter Wegner, June 1990 
+http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.470.5710&rep=rep1&type=pdf - DOWNLOADED
+
+Object Oriented Analysis & Design
+Lecture # 3
+Department of Computer Science and Technology
+University of Bedfordshire
+Written by David Goodwin,
+based on the book Applying UML and Pat
+https://warwick.ac.uk/fac/sci/physics/research/condensedmatt/imr_cdt/students/david_goodwin/teaching/modelling/l3_objectorientation.pdf
+
+"Why Functional PRogramming Matters, by J Hughes.
+https://watermark.silverchair.com/320098.pdf?token=AQECAHi208BE49Ooan9kkhW_Ercy7Dm3ZL_9Cf3qfKAc485ysgAAAl0wggJZBgkqhkiG9w0BBwagggJKMIICRgIBADCCAj8GCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMxNMw0Rs69mbpdyXHAgEQgIICEAgaJ7Jnuc5C7MRuMhS9JfYPQGVZNGn9pFRpLlPpy_hu3OmPa3wAdOUsCjDxEA93cu-1_ILriUwAPaDwYPG4qtMipdn-a-Uu0GSG-7W0Sd8oSGxCppvl1hM6_wBtCmaCfUukQlk9XkpTWoT-luuVQS58a-c3QypCKYZQCAyfKmbZdCw_pZRJP68duzjPFyQah0dIgsUhzPblZVlL421uE__vongXhN3iqNr9M9IxkVWAkuMi16kYEpBBffvCDeRG9XETzRvOip6tFG6o--avq0b5iTRnT__BphzebDbXyul3fODxIK-GoRmQnvw7Al7ySBtOt_DyhEA95CKiG4TNiMuR78p3QBVtE20cKDiu1GMYWA2GQb6OC4F46bO4SmVZBLW9LsBobfEIwVBKGpOOS0aDQetqbZplSY4QFt8JJT98oMa49yYpJyhNq5Yf4LBRodwxxukuJj9CAeu3KI5ClV8YlQgJ8QJ36Mkc2oSC4MZ66U6KT996FdVI1FwJ0zPfQrPT7jizjcmDeWadhcmkG4dsIeO3zuVUVQfvFxUWK3pRKg6dJdDXiGogJQts9QLgre3GynvYH51tqSLFHivP7kxKJv_268ZeWn_wh8Fi78eYLFU0B_YJec_75kIEgl_Uk_S2T6aupATsY1xcMHInfiVwoWK9sWaFyag2NO8vr3HBxTFL7bYyH8ZSE7iwKa4ycw
+
+turing church hypothesis
+lamda calculus
+
+higher order functions are a result of functional Programming
+take 2 functions and their result makes it a higher order function.
+->function->centipede->
+point free style = no assignments
+
+
+Javascript rule:
+if a func takes in a data structure, we must make a copy and then iterate over the copy/send it out
+

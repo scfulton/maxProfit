@@ -1,0 +1,17 @@
+git last 15% use cases
+
+JS anonymous functions, so prevalent in the lang, also in React.
+
+DOM 
+
+using async/sync and why timeout(0)
+
+fetch()
+
+Node.js request and response handling
+
+Heroku
+
+Front End  - back end diagram
+
+MON OCT 21 notes

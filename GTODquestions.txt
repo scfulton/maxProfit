@@ -1,0 +1,52 @@
+1.	What makes a good Full Stack Engineer and how do you fit that criteria?
+
+A good full stack engineer should be an avid learner.  I get excited every time I learn something new, 
+and even more excited when I realize that there are multiple alternatives for completing that same task.  
+
+
+
+
+
+2.	What are your top three technical skills and why?
+
+
+3 of my most enduring technical skills are;
+Programming language independency, system planning and design, and an algorithmic thought process.   
+
+I am proud of not being devoted to any one language or technology.  
+By working hard to attain a sound foundational knowledge of CS, I can easily adapt from one language to another.
+
+Planning and designing a system or component, for me,  starts with a dry erase board or pen and paper.  
+I found early on that if I could draw the logic of a system then I could develop it.   
+
+And an algorithmic thought process aids in my ability to break complex tasks into smaller, repeatable, 
+ and more manageable segments that can lead to the discovery of latent patterns for optimization. 
+
+
+
+
+
+
+
+3.	Name a challenge you overcame in a professional setting or on a project.
+
+A challenge that I overcame on a project was one where I was tasked with creating a full testing suite 
+for a large web based application.  I had no experience in the language nor the testing technology
+that I was tasked with.  I had to research and network with individuals that were able to 
+provide insight in both areas.  This lead to perspiration and dedication 
+at maximum efforts.  
+
+The final outcome for my efforts was successfully completing and exceeding the given requirements for the project and task.
+I produced a final testing suite that covered 80% of the written code, and 100% of the executable functions with in that code.
+
+
+
+
+
+
+4.	Think about the most exciting and energizing aspect of your current position. What do you enjoy about it and why?
+
+One exciting aspect of my current position at Talent Path is the prospect of learning, 
+but even more so is helping.  When team members have an impediment that I can assist with, or provide any insight with,
+it energizes me to take action and give back where I can.
+

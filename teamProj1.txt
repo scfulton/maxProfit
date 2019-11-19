@@ -1,0 +1,95 @@
+Build a product
+    -have a planner tool (progression/stages)
+full stack application
+    -client server serves a client
+    -api server serves an api
+    -connects to a DB
+Pitch this product
+    -plain english 30sec pitch elevator/marketing
+Artifacts
+    -written (Word) pitch (slides optional)
+    -
+Work in sprints
+    -agile
+    -plans
+    -tools
+    -code
+
+
+Team: N.A.M.E.
+-------------------------
+TOOLS:
+------
+GITHUB
+VSCODE
+TRELLO
+REACT.js
+MONGO DB
+Heroku server hosting
+Node Express
+One Drive for documentation
+
+Requirements:
+--------------
+Features:
+---------
+Make profile
+auth/auth
+(Where To Go)
+WTG around me (unfiltered)
+WTG around me (filtered)
+WTG for <$x
+WTG time frame
+WTG filter
+
+Data storage:
+------------
+Restaurant info
+user info
+
+
+Feature creeping:
+-------------------
+PWA
+
+
+Use cases:
+----------
+Sign up
+sign in
+sign out
+
+set up profile
+edit profile/preferences
+    -Dietary restrictions (vegan, spice, seafood... )
+        -ex) validate by providing 90% seafood and 10% burger, ckn, salad...
+    -Hours
+    -Cost
+        -start small, then maybe scrape
+    -Location/Distance
+
+What/where to eat (filtered)
+What/where to eat (un-filtered)
+    -look at preferences
+
+Submit suggestion for additions (restaurant)
+
+As a < type of user >, I want < some goal > so that < some reason >.
+As a power user, I can specify files or folders to backup based on file size, date created and date modified.
+
+
+Action Items:
+--------------
+GITHUB - Scotty
+
+Vision statement - Ivan
+
+designs-
+    -UI
+    -ERD
+    -Data flow
+
+
+
+
+

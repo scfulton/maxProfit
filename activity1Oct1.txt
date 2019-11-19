@@ -1,0 +1,53 @@
+October 1 2019
+
+1)Research agile, scrum, and extreme programming
+Agile Software Development with Scrum, by K Schwaber and M. Beedle
+Scrum - Framework that applies agile methodology
+Agile - SDLC model that applies managable tasks in small time frames to
+    custom tailor each project/iteration best suited for the project.
+Extreme programming - utilizes some agile methods, but focuses on efficiency and not mvp?
+
+2)why is JS called JS, and what relation to Java?
+LiveScript was used in Netscape in '95, which was an implementation 
+of ECMAScript.  May have been renamed due to hype of Java at the time.
+
+3)use repl.it for
+a. 1+1
+b. "cat" + "dog"
+c. e^0.01
+d. log(2)
+e. ln(7)
+f. true + false or true && false
+__________________________
+JS
+a = 1+1
+console.log(a)
+
+a = "cat" + "dog" 
+console.log(a)
+
+a = Math.e^0.01
+console.log(a)
+
+a = Math.log(2)  
+console.log(a)
+
+a = Math.LN2
+console.log(a)
+
+a = true + false
+console.log(a)
+
+a = true && false
+console.log(a)
+
+Results:
+2
+catdog
+0
+0.6931471805599453
+0.6931471805599453
+1
+false
+-------------------------------
+

@@ -1,0 +1,1055 @@
+-How is JavaScript related to Java?
+
+Java and JS are namely related due to the time both were gaining popularity.  LiveScript was framed in 1995,
+which was the same time that java was becoming very popular. 
+Also, they have similar expression syntax and basic control flow structure.
+
+-Describe JS, what sort of language is it?
+
+Cross-platform OO scripting language.  Client and server side functionality.
+Interpretive language, not compiled, but runtime interpretation.  
+
+-What is hoisting in JS?
+
+Allows for use of declared memory space before initialization (physically)
+in code.  No need to declare before/above use.  
+Hoists declaration, not initializations. 
+
+Ex:
+var add;
+add(1,2)
+add = function
+
+-How do you create new scopes in JS?
+
+Parent/ Child scopes are created by nesting functions, control flow
+(loops), and {}.  These will create local scopes.  Global scope is 
+default what entering a script, outside of any block.
+*var: a variable is either globally scoped, or locally scoped to the function in which it is defined.
+    lexical scope will hoist to top of function
+*let & const: are scoped within the block which they are defined
+    hoists to top of loops block
+
+
+-When would you use bind and what does it do?
+
+When trying to change the context of objects in a function, this is used.
+But, binding allows the this to be provided automatically for function calls.
+
+cat and dog objs with bark and meow methods.
+cat.meow.bind(dog) // will let dog meow.
+
+-Discuss inheritance in JS.
+Not classical style: child from parent, it used prototypal (Behavior delegation pattern)
+which created links from 2 objs up to one linked type.
+
+Composition or Mixins
+
+JS utilizes a prototypal compositional method for linking methods and traits.
+They have to be written into a prototype function that will link those methods/traits.  
+
+SeaPlane.prototype = ({}, Airplane.prototype, Boat.prototype)
+
+-What is "closure" in JS? Provide 1 or 2 examples.
+Allows child scope to utilize parent scope, not other way around.
+foo1 (){
+    var x = "yay";
+    foo2 () {
+        console.log(x); //$ yay
+        x = "boo";
+    }
+    console.log(x);     //$ yay
+}
+
+
+
+-What is a polyfill?  Write a polyfill for "map" using basic language features.
+Allows browser to implement non-standard (maybe old) features in a standard manner.
+Like cross browser compatibility.
+
+
+-Undefined should be left assigned by the system... if needed, use null.
+-Map is an efficient ordered key value pairs.
+-Functions are special objects that can be invoked.
+
+dot notation is sugar for named index access....
+obj.add == obj["add"]
+
+wcag - look for contrast compatibility
+------------------------------------------------------
+Mon Oct 7
+
+JS collections:
+    Array - access with int
+    objects - access with string (not ordered)
+    map - ordered hash map
+
+Firefox Developer's edition
+Do all work in private tab with extensions off
+Right click refresh with dev tools open have hard refresh and clear cache
+
+const is const assignment not un-mutable.  <--XXXXXX Don't think this
+
+class Board extends Array{
+    constructor(...args){
+        super(args);
+    }
+    //static place(token) makes class method instead of instance method
+    place(token, location){
+        this[location] = token;
+        // can return unidentified, null, or this
+
+    }
+}
+
+
+// const is const assignment not un-mutable.
+
+
+unityjs had a canvas, uses GPU
+web component
+
+--------------------------------------------
+Tue Oct 8
+
+Node takes v8 (chrome JS compiler) and makes it a runtime env
+
+asynchronicity-
+non blocking single threaded language
+
+Eventloop:
+Push callback to webAPI then push to event loop(call back queue)
+After stack is clear then the Eventloop(call back queue) can add callback to stack.
+
+JQuery-
+fluid API == chainable
+a lot of manipulations very fast
+chrome and firefox are "evergreen"  self updating and standard
+
+EX)
+$('.article')
+^   ^selector expression
+JQuery constructor
+returns one or more jquery wrapped dom nodes
+
+Flux manages state
+sharing state causes bug
+
+jquery alters the DOM, react alters the vDOM, when you use VDOM, we can no longer alter the DOM
+so no jquery when we use react, we must use vanilla js.
+
+-----------------------------------------------
+Wed Oct 9
+
+async == knowing func will run, but not when.
+
+(HTTP fetch) evergreen standard now
+Fetch():
+WindowOrWorkerGlobalScope.fetch()
+CORS and CSP
+
+resource == concept for a document, high level representation of document
+rest = representational state transfer (Roy Fielding phd dissertation)
+
+Express is a library for web applications in NODE
+
+
+    server              res     "resource"        Modified copy              back-end: API
+                ^       |        |                ^
+www HTTP---------------------------------------------------
+                |       v        v                |
+    client:     req              Resource.copy                               front-end: App
+
+    90% is 1st req then res
+    10% is flipped: real time
+
+HTTP Verbs:
+-----------------
+GET:    
+POST:
+HEAD:
+
+most common headers: content-type and accept
+
+RESTful routes >> RESTful resources:
+API endpoints
+Naming Conventions:
+Description     | HTTP Verb     |  
+member            GET             /resources/:id        GET a single resource >> sometimes called show
+collection        GET             /resources/           GET coll of resources>> sometimes called index
+create            POST            /resources/           POST a single resource
+update            PATCH or PUT    /resources/:id        PATCH/PUT to a single resource
+                  -patch is to modify fields or mult fields: SQL update  : not change the id of resource
+                  -put gets a copy of resource(s), all to do work or none of it >>upsert: change id of resource
+destroy           DELETE          /resources/:id        destroy single resource
+                  HEAD            /resource             CORS and CSP metadata
+new               GET             member
+edit              GET             member
+
+
+ServiceMesh: network of functions
+serverless architecture - 
+
+promise.all returns after all are done.
+
+-------------------------------------------------------------
+Mon Oct 14
+
+"Design thinking"  relates to customer centric development
+
+Assignment:  Account management system
+Library module (at least 2) 3 designs, whiteboard, OO and FS.  Made for developers (DX == developer experience)
+
+What does it do/ not do; what is it's behavior. (What is the API)
+
+What does a user management system do:
+access 
+
+REST is a server client relationship.  No need for web or http to have a rest
+cloud computing is web api gateway, and it's job is to authenticate you
+
+Systems or infrastructure architecture != solutions architecture
+
+
+new folder and git commit 
+npm install expression
+require http module then use .Server class to construct a new one
+
+-must create service that responds to HTTP POST requests using either node or express.
+-response with a random quote from a 10 quote "database" ("measure randomness")
+OR
+-Implement a mock of the happy eyes algorithm, benchmark (use package freely) and report results
+
+
+every tub needs to sit on its own bottom
+
+
+---------------------------------------
+Mon Oct 21
+
+Services   - provides client application with data or does work
+Model      - entity that sufficiently describes an objects
+Controller - wears multiple hats, but how model and view interact.
+View       - shown to user, a projection
+Routing    - translates a request stream to a function call
+Middleware - function(s) between the request and application code.  Manipulate or make decisions
+
+services are resources in a monolithic architecture.
+
+MW - router - orm - db
+SEE PICTURE OF EXPRESS architecture
+
+SQL/ relational persistent storage separates data from hows it's used or stored?
+-Event Store is a persistent data store (append only)
+-RDB == collection on sets and relationships between those sets
+-rows == records == instances
+-column == attribute == features
+-strong keys == unique by them selves, weak == need to be combined with another to make strong
+-query = issue to DB and resulting view
+-view is a persistent query
+
+DML
+create 
+alter 
+drop
+
+DDL
+select
+update
+insert
+delete
+
+--------------------------------------------
+Tue 22 Oct 
+
+Reactive or data flow programming means that when dependant data changes, side effects are recalculated
+JOINS-
+
+INNER - returns rows when there is a match in  both tables
+LEFT  - returns all rows from the left table and null for orphans on Right
+RIGHT - returns all rows from the right table and nulls for orphans on left
+FULL  - returns rows where there is a match in one of the tables
+SELF  - used to join a table to itself as if the table were two tables, temporarily renaming at least one table in the SQL statement.
+CARTESIAN - returns the Cartesian product of the sets of records
+
+---------------------------------------------------
+Thur 24 Oct
+"medium" measured micro bench mark.  methods for measuring was interesting.
+Data Down Actions Up
+or 
+Lowest Common Ancestor
+
+REACT
+Class component vs Function component
+-One has life cycle events
+CLASS HAS STATE, 
+D-fault functional components , but when need state use class component
+
+http client examples:
+---------------------
+---
+makes a request with one of these methods, along with a URL and a payload 
+(like a form or query string request) which communicate to the server what action they want performed
+----
+fetch
+request
+axios
+ajax
+NodeHttpClient
+
+Client application: 
+-------------------
+---
+UI
+---
+REACT
+page flow
+routing
+User experience
+
+   v-----is where i want to use a fake server, semi meaningful responses
+   v
+http client  -- client server
+    |
+    |  <---these links are when i want real responses
+    |
+api server
+    |
+    |
+    | 
+   DB    
+
+   CORS - CROSS ORIGIN RESOURCE SECURITY
+   CSP - CONTENT SECURITY POLICY
+
+
+Architectural seams == barriers btwn service layers
+client service -- api service -- DB service
+
+anther definition to fullstack:
+Client server to client to api server to DB
+
+
+CLIENT SERVER approach
+
+---------------------------------------------------
+Mon Oct 28
+AGILE:
+-------
+1) cust collaboration over contract negotiations
+2) working software over technical documentation
+3) responding to change over following a plan
+4) individuals and interactions over tools and processes
+
+SCRUM:
+------
+
+JSX
+state -Definition of State: Values that are tied to the level of 
+    scope that they are initialized in, and can only be accessed 
+    out of scope by passing down references through props.
+component
+props
+lifecycle events 
+lifting state up
+rendering
+
+
+class components have access to lifeCycle hooks.
+-component   didMount
+             didUpdate
+             willUnmount -- used to clean up data, like back button for login should remove entered data
+
+             didMount event will fire didMount method when component renders
+
+Very important to LCA because all children will re-render when state changes.
+
+
+react router - library not affiliated with react
+                -solves front end routing
+Browser router is a component that is going to mount that allows app to have separate sub trees, necessary
+
+App
+|_
+  BrowserRouter
+              |_
+                Switch
+                      |_
+                      |_ Route foo
+                         Route bar
+
+
+
+switch - 
+route - how to name a sub tree
+link - switch sub tree/screen replaces html link
+
+Redux
+Actions - describes state transition - An action is a plain object that represents an 
+    attention to change the state. Actions are the only way to get data into the store
+
+    combine action with payload we get state
+
+Reducers - takes action and  - function that accepts an accumulation and a value and returns a new accumulation. 
+    They are used to reduce a collection of values down to a single value.
+
+Store - holds app state of whole application (global)
+
+redux calls spots that it injects data is a container.(react component that has data)
+
+
+Redux
+------
+Helps separate how should I FROM should I update state
+
+-Reducers are functions that we Write
+
+-create a store by passing it a reducer
+
+--------------------------------------------------------
+Thursday Oct 31
+
+BE routing - to decide when received http request, what code to execute
+    --can be application, document, or ...
+
+client rendered == server serves basic barebone html, then lets client Manipulate
+server rendered == server send entire application and handles 
+
+if you want client rendering, your client server has one route "GLOB" route === "" /* ""
+when making a request from browser, client sever needs to be able to accept any relevant requests 
+so, /* will accept any 
+
+for server rendering:
+--reverse proxies and how they work
+
+
+
+
+
+client server rendering == have less data on client application, and have server send 
+    data to client for view/rendering
+
+server rendering == have client call return entire application, preloaded.
+
+router 5 is easy routing
+
+router == black box that receives a route and output state
+
+front end loading sub tree/ui state
+back end executing code/data
+
+deployment pipelines:
+---------------------
+
+they have different feedback loops - keeping them loosely coupled
+user heroku for automation api and netlify for client automation
+MUST have client route to /* !!!!!!!
+Use GitHub to host code to automate
+by using WEB HOOKS callback over rest
+
+client pipeline
+api pipeline 
+
+
+SDLC:
+--------------------------------------------------
+Ideation        -feedback loops with IT, Analysts, 
+Discovery
+Design
+Implementation
+QA
+SHIP
+
+
+
+----------------------
+Client facing quote app
+
+3 stages :
+Production - master
+staging - staging
+development - development
+
+
+What is full stack?
+Full stack is the client/user-facing-software application and how/what that application 
+connects to a data persistance technology.
+
+Some main components are:
+-front end (client facing application)
+-middle ware (business/application layer)
+-back end (data persistence layer)
+
+The front end 
+
+
+What is a full stack?  In a broad sense, 
+
+
+
+individual:
+Hello, my name is Scotty Fulton and I have a passion for technology and 
+computer science which led me to a career change into the field of 
+information technology as a full stack engineer with Talent Path.  
+
+
+
+
+
+Hello, my name is Scotty Fulton and I get excited about being a full stack 
+engineer because of the creativity in scaling or modeling an application 
+based on requirements. 
+Whether the application needs to to handle 10 or 10 000 user transactions 
+per minute, managing the stacks on a modular basis leave an incredible 
+amount of room for creative and innovative solutions.  
+
+
+
+
+
+
+-------------------------------------------------------
+Nov 4 Mon
+
+Week 6 assessment
+1) CHECK
+Environments:
+    local
+        development
+        testing 
+        Production
+    external
+        development
+        staging
+        production
+    
+2)wrong
+!= Route , but component was correct
+
+3)thrown out 
+function/class component  answer: neither technically
+
+4) thrown out
+http clients: all
+
+5)check
+common lifecycle methods - all
+
+6)wrong
+which life cycle used for API fetch
+
+
+componentWillMount == ajax/async requests
+
+***async decorator tells JS that it will be fulfilled with a promise.***
+
+
+tor browser - onion browser
+
+
+ 
+
+1. Cross-Site Scripting (XSS) 
+
+Involved in about 40 percent of web attack attempts last year 
+
+involves inducing a website to execute arbitrary or malicious script code 
+an attacker uploaded, usually because the site fails to properly sanitize
+ user-submitted inputs.  compromised web page may execute the malicious code from a browser. 
+
+ 
+
+2. SQL Injection (SQLi) 
+
+Attacker enters malicious SQL code into a field on a web page and the server-side 
+code commits it to the database without properly sanitizing it first. A successful
+ SQL injection can delete or change sensitive data or even reveal it to the attacker. 
+
+3. Path Traversal 
+
+Usually results from inadequate input sanitization. Executed by injecting patterns
+ that allow the attacker to move outside the web root directory. This could
+  potentially let an attacker access sensitive information that was originally inaccessible. 
+
+4. Local File Inclusion (LFI) 
+
+Attacker uses directory traversal (or something similar) to induce the web 
+application to execute a file residing elsewhere on the server. Attacker can
+ upload a malicious file and then use this directory traversal to execute it. 
+ If an attacker can’t upload a file, they could still get the contents of, say, 
+ a password file or something similar.  
+
+5. Distributed Denial of Service (DDoS) 
+
+When an application makes repeated requests to a service/server, thus over utilizing or denying other requests from utilizing the services produced.   
+
+overloading its resources and rendering it unavailable to legitimate visitors. 
+
+ 
+
+6. Cross site request forgery (CSRF) 
+
+7. OS command injection 
+
+8. Man in the middle 
+
+9. click tracking 
+
+10. Coin jacking 
+
+ 
+
+ 
+
+OWASP top 3 
+
+------------------------ 
+
+SQLi application vuln 
+
+CSRF 
+
+XSS 
+
+ 
+
+Data leaks 
+
+
+Three Types of Protections 
+
+1. Vulnerability Scanning and Security Testing: 
+
+2. Web Application Firewalls (WAFs):  
+
+3. Secure Development Training (SDT): 
+
+week 7 assessment
+OWASP
+authentication
+define and explain, compare/contract , when and why to use, benefits of both
+    JWT - JSON Web token
+        JWT headers
+        JWT payload
+        JWT signature
+        *****distinct and separate from request http headers/payloads*****
+
+
+    Cookie - 
+    recount history of session management in server client arch
+
+security is an arms race
+    Game theory
+Motivate the story for authentication with a client 
+    --understand the whys and translate to client
+
+    implement an endpoint that validate registered and proved a security token.
+    Implement protected routed with JWT middle ware...
+    jwt in express RYO middle ware, look up decisions
+    identify authentication for users to make requests... 403 forbidden
+
+    FE/Browser needs to receive and store token for auth safely.
+    GOAT project, broken 
+
+    Randomness is at the heart of security, and easy to break.
+    common encryption alogos
+    AES 256
+    Blowfish
+    SHA
+    MD5
+
+
+table with users
+-----------------
+Uid
+username
+passwordHash
+
+TCP transport layer security - crypt (public) and decrypt (private)
+find an express module that will add security to node apis -have a reason why package is top pick
+
+__________________________________________________________________________________
+Tuesday Nov 5
+
+use crypto library in node nodejs.org
+class cipher
+
+take hard coded input, crypt it, output the hash, run again to verify same output, then run through several times
+---------           
+onboard:            v1          v2
+algorithm choice    aes256      delta
+repetition          1           delta
+document            {}          delta
+salt                            delta
+pepper                          delta
+--------------
+Presented JS solutions
+Express security libraries: HELMET, PASSPORT
+both act as an authentication tool by adding a layer between request and response headers: by 
+authenticating, so if response header is not authenticated, reject.  
+
+on projector:
+_______________
+-Use helmet to secure your express API
+-configure middleware to protect against DDoS
+-Use a whitelist or blacklist strategy for parameters
+-Use a whitelist or blacklist for allowed connections
+-Ensure user-input HTML/SQL, etc. are "escaped"
+-validate incoming data
+-ensure dependencies are secure (npm audit or snyk)
+-do not use any interpreters
+-at the top lvl of application, ensure there is a catch 
+    (catch all errors to avoid crash)
+
+
+
+
+side notes:
+<script> elements are potentially very dangerous as incoming elements.
+limit the payload size to protect against DDoS atks
+REPL == Read Eval Print Loop
+in a full JS stack, if DB emits error, then it will float up to top-lvl (index.js/html)
+    so if no catch used, then JS will throw browser error, but if EXPRESS errors, 
+    then server crashes... super important.
+catch errors even for status codes, html status code can give away data
+PII == Personally Identifiable information
+What data is being stored, will raise level of security appropriately
+major tech companies release post-mortem
+TLS == Transport Layer Security.  Keep seams in application
+    to attach security at them.  So when data is needed to be used, it was secured
+    before and after that point.
+TLS:
+-------
+|asdf  |        __n__
+|asdf  |   -->  | n |  (lock) --> transport encrypted text
+|qwer  |        |___| (encrypt)
+-------
+
+                    vs
+
+________
+|\    /|        __n__
+| \  / |   -->  | n |  (lock) -->  transport encrypted pkg/envelope 
+|______|        |___| (encrypt)    (entire: text, letter, and envelope)
+
+
+
+    MVC lvl up to CQRS?
+
+
+------------------------------------------------------------
+Thur Oct 7
+
+review:
+authentication - provides control for authorization, validation, security
+
+JSON Web Token == JWT
+
+Cookie are meant for sharing state btwn client and server, may be stored in a file as headers 
+on a req/res, as well as stored in their own rest service.
+
+History mgmt:
+needs to be auth in network layer to establish auth btwn work station and bank of computers.
+Cookie mgmt is bank of computers storing info about workstation/connections
+identifier sent to MF, MF looks up cookie auths, then return privileged data.
+Sessions are way we store info about a client and a server.
+
+----Cookies are a type of session store.----
+
+history of session mgmt would be a good start for JWT.
+talk about separation of cookies and tokens and pros/cons
+
+JWT is a type of token auth, (like Bearer token) both are subset of token Auth
+
+JWT Parts:
+    JWT header
+    JWT Payload
+    JWT signature
+
+tokens are decoupled from client/server architecture
+smaller than cookies
+tokens only for auth
+cookies can store any thing
+
+tokens: smaller, faster, only for auth, decoupled
+
+tokens are not verified/signed not encrypted.  SSH uses public and private / key and locks
+
+JWT: self signed/verified message (HMAC encryption)
+HMAC exchange data and encryption together
+
+outside of firewall need to HMAC/encrypt
+inside no need to encrypt
+OR if no PII is used, then why encrypt.
+
+REST is managed, not stateful: does not have state prereq to work
+
+-advantages of tokens and where JWT's apply:
+    1) no state(stateless)
+    session is state, but server managed.  
+    JWT - had more than auth info, but also expires data and other 
+        data needed, but still just a representation
+
+        payload is digitally signed, resistent to man in the middle
+
+        since self signed, completely portable
+
+        if server B trusts server A, then no need to re-auth JWT
+    
+    2) Bearer tokens are not entirely portable
+
+    3) because self contained, no need for cookies when using JWT
+
+    4) all tokens are fast, JWT are not as fast as bearer tokens (JWT needs to be encrypted)
+        both are faster than cookies.  
+
+    5) both tokens are decoupled and decentralized.
+        means that no matter the server receiving the token, as long as there is trust, then 
+        retain being decoupled.
+
+HTTP BASIC AUTH -- built in HTTP auth strategy
+
+JWT is self contained 
+    can work with hmac or key exchange
+    
+
+---------------------------------------------------------------------
+mon Nov 11
+
+unit, E2E, integration
+testing pyramid
+
+Premature optimization warming: automating your 
+tests too seen can lead to brittle tests (doesn't handle change well).
+
+Testing is like using scissors, each side sharpens the other.
+Did the test break from an unrelated change? == bad test
+
+shyam-chen /express-starter -- great repo as ref for DB connections and other pkgs
+manuelbieh /react-ssr-setup
+jose rfc jwt pkg
+Lookup:
+    Soap
+    rest
+    graphQL
+    graphiti
+
+3Types of Automated testing:
+UNIT- cover basic units of work, 
+INTEGRATION- cover 2 or more units of work (and their collaboration context)
+END to END (E2E)- overs the systems as a whole (sliced into verticals)
+
+testing using logs is called tracer-bullet testing (or debugging), also include smoke-tests
+
+BACKFILLING - You've written code, you think it works, now prove it.
+
+automated vs manual testing:
+    code that mimics or simulates code trying to test: called mocking
+unit of work == specific task (addition operator, or button testing)
+
+integration test: does add operator work multiple times with equal symbol
+
+Metrics:
+static analysis is the process of analyzing source code and producing statistics
+    Common: cyclomatic complexity, method length, class length, etc...
+    -Code coverage uses static analysis to determine how much of code is executed when a test runs
+    and how much of your code overall is executed/exercised when your entire test suite runs.
+
+    Shoot for 60% coverage, after becoming aim for 70%, Senior expected to cover 90% of code 
+
+Testing archetypes for er applications
+
+UNITS are written for :
+    -models
+    -controllers, interactors, route handlers
+    -views or templates
+    -routes
+    -components (complicated rendering logic)
+    -state management
+
+INTEGRATION:
+    -collaborate btwn models
+    -Sagas, Tasks (user logs in: they get an auth token,... )
+    -framework glue
+
+E2E:
+    -User page flows/journeys
+    -User interactions
+    -Entire features
+    -Entire subsystems or systems
+    -Anywhere boundaries are crossed
+
+To test E2E for uncontrolled components/systems is to deploy to staging and use
+an automated application to "Search" for the deployed link
+"AUTOMATED BROWSING"
+
+
+***TESTS are NOT written code you do not own
+
+General testing the code you want to test, without testing code you don't want to test.
+taking a fake instance of a resource application and injecting it into a dependant application
+Mocking:
+Stubbing:
+Spying:
+Doubles:
+
+{ Faking code ^  Faking data v }
+
+Factories and fixtures. Fake data so yo don't need access to expensive I/O.
+
+REGRESSION TESTS: can be written at any of the 3 levels, goal is to automate
+testing bug fixes and ensure old bugs don't pop up again when making changes in the future.
+
+EX) write a test to prove a bug, then mutate test to mke bug test fail, then fix code to make bug test pass.
+
+TDD: Write test, watch fail, make pass with min code, then repeat.   ("Code Smell")
+    -"Red, Green, Repeat"
+    -Write the API you want then implement
+    -If it's hard to test, it's probably bad code
+
+BDD: write tests so that they reflect business (domain) language. Useful for collaborating with stakeholders
+Sometimes called "Acceptance testing" or Feature Testing or" Outside-in testing"
+Behavior refers to real world business processes.
+Popularized by book, "Domain Driven Design"
+Special format called "Gherkin" (natural language) and code part is "Cucumber".
+
+Feature testing is another name for "outside-in" testing
+    -looking at your system as a whole and testing it, instead of testing it's parts.  See E2E and integration
+    ***inside-out not real***
+
+AAAT 
+    Arrange - inputs
+    Act     - executed
+    Assert  - did i get what i expected (compare what i got vs what i expected)
+    Teat-down- clean shop
+
+unit test is smallest test in a system
+
+integration are necessary to check if data is flowing properly btwn modules
+    (collection of units)
+
+E2E test checks full features from start to finish (by linking modules)
+
+Login flow
+
+Testing pyramid:
+        /\   E2E
+       /  \  Integration
+      /    \ Unit
+      ------
+
+      Most tests will be UNIT foundational, expensive to test E2E so less done.
+
+Assertion library is a library that provides common scenarios, equalto, notequal to...
+Runner finds test files and executes with content
+
+jest - assertion and test runner : gives report % of code covered.  Health, statistics analysis
+mocha with chai - assertion with test Runner
+testing jazzmen, great docs
+
+***Test start, but missing lots***
+function assert(exp[expectation, test) {
+    if(typeof test !== 'function') throw new Error ('test must be a func')
+    if(test() === expectation){
+        CLOG('P')
+    } else {
+        CLOG('F')
+    }
+}
+
+assert(NaN)//F
+assert(false, () => {}) P)
+
+
+ UNIT TESTING:
+ Identify work units, and arrange tests
+
+
+
+Assignment:
+Git repo with readme: task description and instructions to run code; submit by pushing.
+using node: calculator +, -, *, /, equal(doesn't clear), clear (reset stack to empty) (can chain operations)
+
+ex) newCalc(5).clear().add(3).equals() // => 3
+
+empty git repo
+touch readme
+npm init
+
+jest:
+describe to group tests together(API tab?)
+
+describe (' calculator', ()=> {
+    test(' has a getter on register called equals', ()=>{
+        const subject = new Calc(5)
+        expect (subject.equals().toBeDefined
+    } )
+})
+
+OUTPUT:
+calculator  
+    has a getter on register called equals    P/F
+
+
+HAPPY PATH / SAD PATH = test for these
+
+
+
+
+
+manual testing  
+    -console logging / testing as user would be using
+Test case:
+    context to test a task
+mocking - 
+    faking code/methods... that simulate the real version
+unit/integration/E2E
+    single work unit/chained units/entire work flow
+Other assertion libraries
+    Jasmine/Jest/chai
+Test Runners - a way to control the environment and execute tests executed
+    Mocha/JEst
+Brittle and robust tests    
+    maintain test cases, but STRATEGICALLY remove ones that don't add value.
+
+
+
+RPN calculator
+token.match(/\d/g)  <= regex!!?!?!
+
+
+Automated testing suites--- FREE-99!!!
+nightmare
+    phantomJS - library drives selenium,
+    npm install cypress
+
+---------------------------------------------------------
+Mon Nov 18
+Mock interview tips:
+
+"domain transfer" -  transfer knowledge to an alternate domain/language/technology
+look into Ruby language
+javascript#30
+cracking the coding interview
+frontendmasters.com
+
+interviewcake.com example question:
+
+How much money could you have made yesterday if you spent all day trading Google stocks (GOOD; ABC)?
+1. get historic stock prices from yesterday, store them in a list.  
+2. List may be an array with minutes after opening bell (9:30AM) as indices.  Values are prices
+(USD) of one share of stock at that time.
+    EX) $500 @ 10:30AM, : `stockprice[60] = 500`
+3.  write an efficient function that takes stock price data and returns the best profit you could make 
+from one purchase and one sale of one share yesterday.
+
+you may not short, you cannot buy and sell in teh same minute.  
+at least one minute should pass between buying and selling
+
+``` stockprices = [ 10, 7, 5, 8, 1, 9]
+getMaxProfit(stockPrices) // 6, buy for $5 sell for $11
+
+complexity      Big O
+algorithms      
+data structures
+

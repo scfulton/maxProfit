@@ -1,0 +1,15 @@
+Profiles:
+git config --global user.name "Scotty Fulton"
+git config --global user.email "sfulton@talentpath.com"
+
+git config --global core.editor code
+
+check:
+git config --list
+
+Docs:
+how to setup vscode + prettier + eslint
+how to globally setup eslint in vscode
+eslint docs
+first-time git setup
+
